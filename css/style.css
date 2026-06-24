@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    flex-direction: column;
+    background-color: rgb(254, 229, 244);
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20%;
+    width: 100dvh;
+    height: 100dvh;
+
+}
+.row1, .row2 {
+    display: flex;
+    
+    flex-wrap: wrap;
+    width: 50px;
+    height: 50px;
+
+}
+.sqr {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1/1;
+    border: 1px solid brown;
+    text-align: center;
+    cursor: pointer;
+}
