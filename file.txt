@@ -1,0 +1,20 @@
+Create an 8*8 board.
+Set the first player as black.
+Repeat while there is no winner and the board is not empty:
+Ask the current player to make a move.
+Check if the space is empty.
+If empty and it's a legal move, place the player’s piece there.
+Check if both players have pieces.
+If no, announce the winner.
+If yes, switch turns between white and black.
+If there are no moves left and no one won, announce a tie.
+
+
+aau I want to be able to compete against another player.
+aau I want to be able to select one of my pieces and see the valid moves so i can know how to play.
+aau I want captured pieces to be removed automatically.
+aau I want my piece to become a king when it reaches the opposite side of the board.
+aau I want to be able to restart the game so that I can play again.
+aau I want to see a clear indication that the game is over.
+aau I want to be able to see my score so that I can track my wins and losses.
+aau I want to see who won.
