@@ -30,6 +30,7 @@ squares.forEach(function(element){
     if(element.id % 2 === 0 && boardRow1.contains(element) || element.id % 2 && boardRow2.contains(element) || element.id % 2 === 0 && boardRow3.contains(element) || element.id % 2 && boardRow4.contains(element) || element.id % 2 === 0 && boardRow5.contains(element) || element.id % 2 && boardRow6.contains(element) || element.id % 2 === 0 && boardRow7.contains(element) || element.id % 2 && boardRow8.contains(element)){
         element.style.backgroundColor = 'saddlebrown'}
     })
+
 squares.forEach(function(element){
    element.addEventListener('click', function(){
     let currentSquare = Number(element.id) 
@@ -66,11 +67,11 @@ squares.forEach(function(element){
                 element.removeChild(element.firstChild)})
             }
     }
-
-
     })
 
 })
+
+
 squares.forEach(function(element){
     let currentSquare = Number(element.id)
     element.addEventListener('click', function(){
@@ -83,10 +84,30 @@ squares.forEach(function(element){
         move2.appendChild(dot2)
         console.log(move)
         console.log(move2)
+        console.log(Number(move.parentElement.id -1))
+
+        if (move.children[0].classList[0] === 'green-dot'){
+            move.addEventListener('click', function(){
+                let pawnwhite = document.createElement('img')
+                pawnwhite.src = "/assets/black-pieces/black-pawn.jpg"
+                pawnwhite.classList = 'black-pawn'
+                move.replaceChild(pawnwhite, move.children[0])
+                move2.removeChild(move2.children[0])
+                element.removeChild(element.firstChild)
+                console.log(element)})}
+
+            if (move2.children[0].classList[0] === 'green-dot'){
+                move2.addEventListener('click', function(){
+                let pawnwhite = document.createElement('img')
+                pawnwhite.src = "/assets/black-pieces/black-pawn.jpg"
+                pawnwhite.classList = 'black-pawn'
+                element.removeChild(element.firstChild)
+                move2.replaceChild(pawnwhite, move2.children[0])
+                move.removeChild(move.firstChild)
+                element.removeChild(element.firstChild)})
+            }
 
     }
 
 })
-
-
 })
