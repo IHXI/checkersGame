@@ -9,6 +9,11 @@ const boardRow7 = document.getElementById('107')
 const boardRow8 = document.getElementById('108') 
 const whitePawn = document.querySelectorAll('.white-pawn')
 const blackPawn = document.querySelectorAll('.black-pawn')
+const reset = document.querySelector('button')
+
+
+let results = document.querySelector('p')
+
 
 
 let selected = null
@@ -25,30 +30,43 @@ squares.forEach(function(element){
     })
 
 
-
+reset.addEventListener('click', function(){
+    location.reload()
+})
 
     
 
 
 squares.forEach(function(element){
     element.addEventListener('click', function(){
-        
+
         if(element.children[0] && element.children[0].classList[0] === 'green-dot'){
                 let pawn = document.createElement('img') 
 
                 if(selected.children[0].classList[0] === 'white-pawn'){
-                pawn.src = '/assets/white-pieces/white-pawn.jpg'
+                pawn.src = 'assets/white-pieces/white-pawn.jpg'
                 pawn.classList = 'white-pawn'  
                 }
 
-                
+
                 if(selected.children[0].classList[0] === 'black-pawn'){
-                pawn.src = '/assets/black-pieces/black-pawn.jpg'
+                pawn.src = 'assets/black-pieces/black-pawn.jpg'
                 pawn.classList = 'black-pawn' 
                 }
 
             selected.innerHTML = ''
             element.replaceChild(pawn, element.children[0])
+            console.log(element.parentElement.id)
+            if(boardRow8.contains(element)){
+                results.textContent = 'white wins'
+            }
+
+            else if(boardRow1.contains(element)){
+                results.textContent = 'black wins'
+                
+            }
+            
+            
 
 
         } else {
@@ -69,17 +87,18 @@ squares.forEach(function(element){
 
             if(Number(element.parentElement.id) +1 === Number(move.parentElement.id) && move.childElementCount === 0){
                 let dot1 = document.createElement('img')
-                dot1.src = '/assets/green-dot.png'
+                dot1.src = 'assets/green-dot.png'
                 dot1.classList = 'green-dot'
                 move.appendChild(dot1)
             }
 
             if(Number(element.parentElement.id) +1 === Number(move2.parentElement.id) &&  move2.childElementCount === 0){
                 let dot2 = document.createElement('img')
-                dot2.src = '/assets/green-dot.png'
+                dot2.src = 'assets/green-dot.png'
                 dot2.classList = 'green-dot'
                 move2.appendChild(dot2)
             }
+
         
     
         }
@@ -94,14 +113,14 @@ squares.forEach(function(element){
 
             if(Number(element.parentElement.id) -1 === Number(move.parentElement.id) && move.childElementCount === 0){
                 let dot1 = document.createElement('img')
-                dot1.src = '/assets/green-dot.png'
+                dot1.src = 'assets/green-dot.png'
                 dot1.classList = 'green-dot'
                 move.appendChild(dot1)
             }
 
             if(Number(element.parentElement.id) -1 === Number(move2.parentElement.id) &&  move2.childElementCount === 0){
                 let dot2 = document.createElement('img')
-                dot2.src = '/assets/green-dot.png'
+                dot2.src = 'assets/green-dot.png'
                 dot2.classList = 'green-dot'
                 move2.appendChild(dot2)
             }
