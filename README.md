@@ -8,7 +8,7 @@ _A brief description of your game_
 
 ### Play the Game
 
-[Deployed Game Link](http://linktoyourgame.com)
+[Deployed Game Link](https://ihxi.github.io/checkersGame/)
 
 
 ### How to Play
