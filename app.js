@@ -32,8 +32,8 @@ squares.forEach(function(element){
         element.removeChild(element.firstChild)
     }
 
+
     element.addEventListener('click', function(){
-    console.log(element)
     let currentSquare = Number(element.id) 
 
     if (element.children[0] && element.children[0].classList[0] === 'white-pawn') {
@@ -82,27 +82,10 @@ squares.forEach(function(element){
 
                 element.innerHTML = ''    
                 move2.replaceChild(pawnwhite, move2.children[0])
-                move.innerHTML = ''
-                
-    
-                
-            })}
+                move.innerHTML = ''})}
+        }
 
-    }
-    })
-
-})
-
-
-squares.forEach(function(element){
-
-     if (element.children[0] && element.children[0].classList[0] === 'green-dot'){
-        element.innerHTML = ''
-    }
-
-    let currentSquare = Number(element.id)
-    element.addEventListener('click', function(){
-    if(element.children[0].classList[0] === 'black-pawn'){
+         if(element.children[0].classList[0] === 'black-pawn'){
         let move = document.getElementById(currentSquare - 7)
         let move2 = document.getElementById(currentSquare - 9)
 
@@ -146,9 +129,8 @@ squares.forEach(function(element){
                 element.innerHTML = ''
                 move2.replaceChild(pawnblack, move2.children[0])
                 
-                move.removeChild(move.firstChild)
-                })}
-    }
+                move.removeChild(move.firstChild)})}
+         }
+    })
 
-})
 })
