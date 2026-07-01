@@ -1,8 +1,8 @@
-# Spaceman 🎮
+# Checkers 🎮
 
 _A brief description of your game_
 
-![Screenshot or Logo](gameplay.png)
+![Screenshot or Logo](assets/CheckersGame.png)
 
 ## Getting Started
 
@@ -13,17 +13,17 @@ _A brief description of your game_
 
 ### How to Play
 
-1. **Start the Game**: Load the game in your browser to start your space adventure.
-2. **Guess Letters**: Click on the alphabet on your screen or use your keyboard to guess letters.
-3. Etc...
+1. **Start the Game**: Load the game in your browser to start.
+2. **Move Players**: Click on the pawn on your screen to reveal legal moves.
+3. **Win the Game**: Reach the otherside of the board to win the game.
 
 ### Installation
 
 No installation required! Simply clone the repository to your local machine and open the `index.html` file in your favorite browser to start playing.
 
 ```bash
-git clone https://github.com/your-username/spaceman.git
-cd spaceman
+git clone https://github.com/IHXI/checkersGame
+cd checkersGame
 open index.html
 ```
 
