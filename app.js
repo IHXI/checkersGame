@@ -10,7 +10,13 @@ const boardRow7 = document.getElementById('107')
 const boardRow8 = document.getElementById('108') 
 const whitePawn = document.querySelectorAll('.white-pawn')
 const blackPawn = document.querySelectorAll('.black-pawn')
+const pawnblack = document.createElement('img')
+                pawnblack.src = "/assets/black-pieces/black-pawn.jpg"
+                pawnblack.classList = 'black-pawn'
 
+const pawnwhite = document.createElement('img')
+                pawnwhite.src = "/assets/white-pieces/white-pawn.jpg"
+                pawnwhite.classList = 'white-pawn'
 
 const dot1 = document.createElement('img')
     dot1.src = '/assets/green-dot.png'
@@ -20,7 +26,10 @@ const dot2 = document.createElement('img')
     dot2.src = '/assets/green-dot.png'
     dot2.classList = 'green-dot'
 
+
+let selected = []
 let clicked = false
+let currentSquare = 0
 
 squares.forEach(function(element){
     if(element.id % 2 && boardRow1.contains(element) || element.id % 2 ===0 && boardRow2.contains(element) || element.id % 2 && boardRow3.contains(element) || element.id % 2 === 0 && boardRow4.contains(element) || element.id % 2 && boardRow5.contains(element) || element.id % 2 === 0 && boardRow6.contains(element) || element.id % 2 && boardRow7.contains(element) || element.id % 2 === 0 && boardRow8.contains(element)){
@@ -34,41 +43,42 @@ squares.forEach(function(element){
 
 squares.forEach(function(element){
    element.addEventListener('click', function(){
-    let currentSquare = Number(element.id) 
+    console.log(element)
+    currentSquare = Number(element.id) 
 
-    if (element.children[0].classList[0] === 'white-pawn' && element.childElementCount != 0) {
+    if (element.children[0].classList[0] === 'white-pawn') {
         console.log(currentSquare)
         let move = document.getElementById(currentSquare + 7)
         let move2 = document.getElementById(currentSquare + 9)
         
 
-        if(Number(element.parentElement.id) +1 === Number(move.parentElement.id)){
+        if(Number(element.parentElement.id) +1 === Number(move.parentElement.id) && move.childElementCount === 0){
             move.appendChild(dot1)
         }
-        if(Number(element.parentElement.id) +1 === Number(move2.parentElement.id)){
+        if(Number(element.parentElement.id) +1 === Number(move2.parentElement.id) &&  move2.childElementCount === 0){
             move2.appendChild(dot2)
         }
+    
 
 
-        if (move.children[0].classList[0] === 'green-dot'){
+        if (move.children[0].classList[0] === 'green-dot' ){
             move.addEventListener('click', function(){
-                let pawnwhite = document.createElement('img')
-                pawnwhite.src = "/assets/white-pieces/white-pawn.jpg"
-                pawnwhite.classList = 'white-pawn'
-                move.replaceChild(pawnwhite, move.children[0])
-                move2.removeChild(move2.children[0])
+            
                 element.innerHTML = ''
-                console.log(element)})}
+                move.replaceChild(pawnwhite, move.children[0])
+                move2.innerHTML = ''
+                
+            })}
+
 
             if (move2.children[0].classList[0] === 'green-dot'){
                 move2.addEventListener('click', function(){
-                let pawnwhite = document.createElement('img')
-                pawnwhite.src = "/assets/white-pieces/white-pawn.jpg"
-                pawnwhite.classList = 'white-pawn'
-                element.removeChild(element.firstChild)
+                element.innerHTML = ''    
                 move2.replaceChild(pawnwhite, move2.children[0])
-                move.removeChild(move.firstChild)
-                element.innerHTML = ''
+                move.innerHTML = ''
+                
+    
+                
             })}
 
     }
@@ -85,20 +95,18 @@ squares.forEach(function(element){
         let move2 = document.getElementById(currentSquare - 9)
 
 
-        if(element.parentElement.id -1 === Number(move.parentElement.id)){
+        if(element.parentElement.id -1 === Number(move.parentElement.id) && move.childElementCount === 0){
             move.appendChild(dot1)
         }
-        if(element.parentElement.id -1 === Number(move2.parentElement.id)){
+        if(element.parentElement.id -1 === Number(move2.parentElement.id) && move2.childElementCount === 0){
             move2.appendChild(dot2)
+            console.log(move2)
         }
 
         console.log(move)
         console.log(move2)
         if (move.children[0].classList[0] === 'green-dot'){
             move.addEventListener('click', function(){
-                let pawnblack = document.createElement('img')
-                pawnblack.src = "/assets/black-pieces/black-pawn.jpg"
-                pawnblack.classList = 'black-pawn'
                 element.innerHTML = ''
                 move.replaceChild(pawnblack, move.children[0])
                 move2.removeChild(move2.children[0])
@@ -107,9 +115,6 @@ squares.forEach(function(element){
 
             if (move2.children[0].classList[0] === 'green-dot'){
                 move2.addEventListener('click', function(){
-                let pawnblack = document.createElement('img')
-                pawnblack.src = "/assets/black-pieces/black-pawn.jpg"
-                pawnblack.classList = 'black-pawn'
                 
                 element.innerHTML = ''
                 move2.replaceChild(pawnblack, move2.children[0])
