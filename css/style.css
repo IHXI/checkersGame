@@ -1,5 +1,8 @@
+*{
+    box-sizing: border-box;
+}
 body {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -8,13 +11,34 @@ body {
     background-color: rgb(254, 229, 244);
     font-family: system-ui, sans-serif;
     margin: 0;
-    color: rgb(255, 255, 255);
+
 }
+
+#border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: 10px solid white; 
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
 h1{
     color: saddlebrown;
     text-shadow: -2px 1px 0px rgb(0, 0, 0);
 
 }
+article{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 20px;
+}
+
 .board {
     display: flex;
     flex-direction: column;
@@ -24,6 +48,7 @@ h1{
 .row{
     display: flex;
 }
+
 .sqr {
     display: flex;
     width: 1rem;
@@ -38,14 +63,13 @@ p{
 }
 
 button{
-    border: 2px dashed crimson;
+    border: 2px solid crimson;
     border-radius: 20px;
     cursor: pointer;
-    background-color: wheat;
+    background-color: rgb(249, 209, 222);
     color: rgb(159, 0, 32);
     font-weight: bold;
     font-size: 10px;
+    width: 50px;
 }
-
-
 
